@@ -1,4 +1,4 @@
-resource_name,severity,finding
-client-files-storage,High,Storage Account with public access enabled
-legacy-storage,Medium,Storage Account does not require HTTPS
-backup-storage,High,Storage Account encryption is disabled
+resource_name,severity,finding,recommendation
+client-files-storage,High,Storage Account with public access enabled,Disable public access unless explicitly required
+legacy-storage,Medium,Storage Account does not require HTTPS,Require HTTPS for all connections to the Storage Account
+backup-storage,High,Storage Account encryption is disabled,Enable encryption for data stored in the Storage Account

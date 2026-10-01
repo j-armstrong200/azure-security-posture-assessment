@@ -11,7 +11,8 @@ with open("azure_resources.csv", newline="") as file:
             findings.append({
                 "resource_name": resource["resource_name"],
                 "severity": "High",
-                "finding": "Storage Account with public access enabled"
+                "finding": "Storage Account with public access enabled",
+                "recommendation": "Disable public access unless explicitly required"
     })
 
         if resource["resource_type"] == "Storage Account" and resource["https_only"] == "No":
@@ -19,7 +20,8 @@ with open("azure_resources.csv", newline="") as file:
             findings.append({
                 "resource_name": resource["resource_name"],
                 "severity": "Medium",
-                "finding": "Storage Account does not require HTTPS"
+                "finding": "Storage Account does not require HTTPS",
+                "recommendation": "Require HTTPS for all connections to the Storage Account"
     })
 
         if resource["resource_type"] == "Storage Account" and resource["encryption_enabled"] == "No":
@@ -27,11 +29,12 @@ with open("azure_resources.csv", newline="") as file:
             findings.append({
                 "resource_name": resource["resource_name"],
                 "severity": "High",
-            "finding": "Storage Account encryption is disabled"
+            "finding": "Storage Account encryption is disabled",
+            "recommendation": "Enable encryption for data stored in the Storage Account"
     })
 
     with open("security_findings.csv", "w", newline="") as report_file:
-        fieldnames = ["resource_name", "severity", "finding"]
+        fieldnames = ["resource_name", "severity", "finding", "recommendation"]
         writer = csv.DictWriter(report_file, fieldnames=fieldnames)
 
         writer.writeheader()
