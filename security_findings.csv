@@ -1,0 +1,4 @@
+resource_name,severity,finding
+client-files-storage,High,Storage Account with public access enabled
+legacy-storage,Medium,Storage Account does not require HTTPS
+backup-storage,High,Storage Account encryption is disabled
