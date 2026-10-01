@@ -1,0 +1,6 @@
+resource_name,resource_type,public_access,https_only,encryption_enabled,status
+legal-docs-storage,Storage Account,No,Yes,Yes,Active
+client-files-storage,Storage Account,Yes,Yes,Yes,Active
+legacy-storage,Storage Account,No,No,Yes,Active
+webapp-prod,Web App,Yes,Yes,Yes,Active
+backup-storage,Storage Account,No,Yes,No,Active
